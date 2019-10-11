@@ -2,6 +2,7 @@ import _ from 'lodash';
 import printMe from './print.js';
 import './style.css';
 import './style.scss';
+import './sass/main.scss';
 
 
 function component() {
@@ -19,4 +20,6 @@ function component() {
     return element;
   }
   
-  document.body.appendChild(component());
+  // document.body.appendChild(component());
+
+  
