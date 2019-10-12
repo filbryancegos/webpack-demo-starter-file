@@ -1,12 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
 module.exports = {
     mode: 'development',
     entry: {
         app: './src/index.js',
-        print: './src/print.js',
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -16,6 +14,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Output Management',
+            template: 'src/index.html'
         }),
     ],
     output: {
@@ -50,10 +49,22 @@ module.exports = {
             ]
         },
         {
-            test: /\.(png|svg|jpg|gif)$/,
-            use: [
-            'file-loader',
-            ],
+            test: /\.(png|jpe?g|gif)$/i,
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              outputPath: 'assets/',
+              publicPath: 'assets/'
+            },
+        },
+        {
+        test: /\.(html)$/,
+            use: {
+                loader: 'html-loader',
+                options: {
+                    attrs: [':data-src']
+                }
+            }
         },
         {
             test: /\.m?js$/,
@@ -61,11 +72,12 @@ module.exports = {
             use: {
               loader: 'babel-loader',
               options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread']
+                    presets: ['@babel/preset-env'],
+                    plugins: ['@babel/plugin-proposal-object-rest-spread']
               }
             }
           }
         ],
     },
+    
 };

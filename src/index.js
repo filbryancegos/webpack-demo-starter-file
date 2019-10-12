@@ -1,25 +1,12 @@
 import _ from 'lodash';
-import printMe from './print.js';
-import './style.css';
+// import './style.css';
 import './style.scss';
 import './sass/main.scss';
+import * as todos from'./js/todos';
+import * as countdown from'./js/countdown';
 
 
-function component() {
-    const element = document.createElement('div');
-    const btn = document.createElement('button');
-  
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
 
-    btn.innerHTML = 'Click me and check the console!';
-    btn.onclick = printMe;
 
-    element.appendChild(btn);
-  
-    return element;
-  }
-  
-  // document.body.appendChild(component());
 
   

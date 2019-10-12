@@ -1,8 +1,8 @@
 html {
     box-sizing: border-box;
-    background: url('http://wes.io/hx9M/oh-la-la.jpg') center no-repeat;
-    background-size: cover;
-    min-height: 100vh;
+    // background: url('http://wes.io/hx9M/oh-la-la.jpg') center no-repeat;
+    // background-size: cover;
+    // min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,15 +12,6 @@ html {
 
   *, *:before, *:after {
     box-sizing: inherit; 
-  }
-
-  svg {
-    fill:white;
-    background: rgba(0,0,0,0.1);
-    padding: 20px;
-    border-radius: 50%;
-    width: 200px;
-    margin-bottom: 50px;
   }
 
   .wrapper {
@@ -55,8 +46,6 @@ html {
         display: none;
     }
   }
-
-  
 
   .plates input + label:before {
     content: '⬜️';
